@@ -7,65 +7,42 @@
 -  You can use `r` command to refresh you changes..
 
 
-## First Hello World App
+# Day 2
 
-Our code resides in lib folder, there you will make .dart file to code your app etc.
+So, In this section we saw some variable declaration and template string sort of things. Here
+- We have also seen how to broke code into modules and call them. Here
+- Saw builtin `Scaffold` Widget.
 
-Main.dart is more like is App.vue file as per my perception right now. Open main.dart file... and delete all code... 
+## Variable declaration
 
-And let's startX
+We can explicity or non-explicitly declare our varialble... `int, double, float etc` and also can use `var, const, final`. And when you want to call them you can call it by using `$variable_name or ${class.method()}`
 
-- We will use already build package which inside
--- `import 'package:flutter/material.dart';` Material UI
+## code Modulation.
 
-- Intialize your app just like you do in main.js...
--- ```
-void main() {
-  runApp(CodeChit());
-}
-```
+create new file .dart file and put all of your content there after initializing your widget.
+and then you can call them inside main.dart by importing it.
 
-- Then you will have to intialize this CodeChit class by extending it from existing `State` and `Stateless Widget`
-But right now we will extend with Stateless Widget.
+`import 'homepage.dart'` and then simply call it by using `HomePage()`
 
-[ As per my opinion stateless widget will be those who doesnt maintain their data state... ]
-You can get easily this structure by using `stl` + tab
+
+## Scaffold Widget.
+
+We also have prebuilt scaffold widget declaration in `Material UI`
 
 ```
-class <app_name> extends StatelessWidget {
-  const <app_name>({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
+Scaffold(
+      appBar: AppBar(title: Text("CodeChit")),
+      body: Center(
+          child: Container(
+              child:
+                  Text('I am $name, I was born in $year.\n'+
+                  '$msg1 and value of pi is $pi')
+                ),
+          ),
+      drawer: Drawer(),  
     );
-  }
-}
 ```
 
-Now we would intialize our Material widget to make it beautiful. 
-
-So will have to change the Widget build function content to do This
-
-```
-return MaterialApp(
-    home: Material(
-        child: Center(
-        child: Container(
-            child: Text('Welcome to CodeChit World.')
-        )
-        )
-    )
-);
-```
-
-Now here above Instead of returning just `Container` we wrapped it inside `MaterialApp()` this function
-has `home:` Where we initailized our `Material()` design. 
-
-And then we've added `Center()` function to center all of our `Container`. And lastly we defined our 
-`Container(child: Text('your text'))`.
-
-
-pretty much that's it you will need to create hello world app :smile:
+Change Material design with this.... and change Material(child: ) with Scaffold(body:). You can also add 
+prebuilt appBar for header... `drawer` for sidebar...
 
